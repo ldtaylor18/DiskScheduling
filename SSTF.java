@@ -69,11 +69,10 @@ public class SSTF extends node
 
 	    public static void main(String[] args) 
 	    { 
-    
+	    	// generate 1000 random #s to fill array
+	    	//int head = Integer.parseInt(args[0]);
 	    	
-	
-	    	int arr = scanner.nextInt();
-	
+	    
 	    	// request array 
 	    	//int arr[] = { 176, 79, 34, 60, 92, 11, 41, 114 };  
 	    	//shortestSeekTimeFirst(arr, 50); 
