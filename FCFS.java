@@ -1,57 +1,37 @@
-import java.util.*;
 
-public class FCFS 
-{
-//	static int Queue[],n, a, b, head, max, seekTime;
-//	static int diff = 0;
-//	static float avg;
-	
-	public static void main(String args[])
-	{ 
-		
-		//int Queue[];
-		
-		int n, a, b, head, max, seekTime;
-		int diff = 0;
-		float avg;
-		
-		Queue<Integer> q = new LinkedList<>();
-		
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Enter max disk");
-		max = scanner.nextInt();
-		
-		System.out.println("Enter request size");
-		n = scanner.nextInt();
-		
-		System.out.println("Enter request entries");
-		for(a = 1; a <= n; a++)
-		{
-			//Queue[a] = scanner.nextInt();
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
 
-			q.add(scanner.nextInt());
-		}
-		
-		System.out.println("Enter head position");
-		head = scanner.nextInt();
-		q[0] = head;
-		//Queue[0] = head;
-		
-		// Diff from cylinders
-		for(b = 0; b < n-1; b++)
-		{
-			diff = Math.abs(q[b+1] - q[b]);
+public class FCFS {
 
-			//diff = Math.abs(Queue[b+1] - Queue[b]);
-			seekTime += diff;
-		}
-		
-		avg = (float)seekTime/n;
-		
-		
-		
-	}
-	
+    public static void main(String[] args) {
+
+        Queue<Integer> queue = new LinkedList<>();
+        Random rand = new Random();
+
+       // int head = Integer.valueOf(args[0]);
+        queue.add(53);
+
+        //Generate a random series of 1000 cylinder requests
+        for(int i = 0; i<1000; i++){
+            queue.add(rand.nextInt(1000));
+        }
+
+        //Get head
+        int headMovement = 0;
+        int temp = queue.peek();
+        queue.remove();
+
+        //Process request and count head movements.
+        while(!queue.isEmpty()) {
+
+            int val1 = queue.peek();
+            queue.remove();
+
+            headMovement += Math.abs(temp-val1);
+            temp = val1;
+        }
+        System.out.println("Total head movement: " + headMovement);
+    }
 }
