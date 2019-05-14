@@ -10,12 +10,12 @@ public class FCFS {
         Queue<Integer> queue = new LinkedList<>();
         Random rand = new Random();
 
-       // int head = Integer.valueOf(args[0]);
-        queue.add(53);
+        int head = Integer.valueOf(args[0]);
+        queue.add(head);
 
         //Generate a random series of 1000 cylinder requests
         for(int i = 0; i<1000; i++){
-            queue.add(rand.nextInt(1000));
+            queue.add(rand.nextInt(5000));
         }
 
         //Get head
