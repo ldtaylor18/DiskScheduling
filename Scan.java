@@ -68,11 +68,14 @@ public class Scan {
                 list.remove(min);
             }  else {
 
-                totalDistance += head;
-                if(left)
+                if(left) {
+                    totalDistance += head;
                     head = 0;
-                else
+                }
+                else {
+                    totalDistance += Math.abs(head-4999);
                     head = 4999;
+                }
 
                 left = !left;
             }
