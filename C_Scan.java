@@ -71,14 +71,12 @@ public class C_Scan {
 
                 if (left) {
                     totalDistance += head;
-                    head = 199;
+                    head = 4999;
                 }
                 else {
-                    totalDistance += Math.abs(head-199);
+                    totalDistance += Math.abs(head-4999);
                     head = 0;
                 }
-
-            //    left = !left;
             }
 
             System.out.println("Serving " + head);
